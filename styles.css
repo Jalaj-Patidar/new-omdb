@@ -1,0 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  }
+  
+  header {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  }
+  header input{
+      width:250px;
+      height: 15px;
+      border-radius: 5px;
+  }
+  
+  main {
+  padding: 20px;
+  }
+  
+  #movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  }
+  
+  .movie-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  }
+  
+  .movie-card img {
+  max-width: 100%;
+  height: 120px;
+  }
+  
+  #pagination {
+  text-align: center;
+  margin-top: 20px;
+  }
+  
+  #movieDetails {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  }
+/* Styling for pop-up */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#popup h2 {
+  margin-bottom: 10px;
+}
+
+#popup p {
+  margin: 0 0 10px;
+}
+
+#popup .rating-comment {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+#popup .rating-comment p {
+  margin: 0;
+}
+
+#popup .close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  }
+  
+  .rating-container input[type="radio"] {
+  display: none;
+  }
+  
+  .rating-container label {
+  cursor: pointer;
+  font-size: 25px;
+  }
+  
+  .rating-container label:before {
+  content: "\2606";
+  }
+  
+  .rating-container input[type="radio"]:checked ~ label:before {
+  content: "\2605";
+  }
+  
+  .comment-input {
+  width: 100%;
+  margin-top: 10px;
+  }
+  
+  #ratingAndComments {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  }
+  
+
+/* Responsive styles */
+@media screen and (max-width: 720px) {
+  #movieList {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .movie-card{
+      height: auto; 
+   }
+  }
+  
+  @media screen and (max-width: 560px) {
+  #movieList {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-gap: 10px;
+  }
+  .movie-card{
+     height: auto; 
+  }
+  }
+    
